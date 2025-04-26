@@ -6,38 +6,81 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    // variaveis para duas cartas
+    char estado_0, estado_1;
+    char *cod_0[10], cod_1[10];
+    char cidade_0[50], cidade_1[50];
+    unsigned long int populacao_0, populacao_1;
+    float area_0, area_1;
+    float pib_0, pib_1;
+    int nPontosTuris_0, nPontosTuris_1;
+    float densidadePopulacional_0, densidadePopulacional_1;
+    float pibPerCapita_0, pibPerCapita_1;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Cadastro das Cartas 01: entrada pelo usuario
+    printf("---CADASTRO DA CARTA N-01---\n");
+    printf("Estado: ");
+    scanf(" %c", &estado_0);
+    printf("Código da Carta: ");
+    scanf("%s", &cod_0);
+    printf("Nome da Cidade: ", &cidade_0);
+    scanf("%s", &cidade_0);
+    printf("População: ");
+    scanf("%lu", &populacao_0);
+    printf("Área km²: ");
+    scanf("%f", &area_0);
+    printf("PIB: ");
+    scanf("%f", &pib_0);
+    printf("Número de Pontos Turísticos: ");
+    scanf("%i", &nPontosTuris_0);
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    //calcula os atributos desidade populacional e PIB per Capita da carta 1
+    densidadePopulacional_0 = (float)populacao_0 / area_0;
+    pibPerCapita_0 =  pib_0 / (float)populacao_0;
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    // Cadastro das Cartas 02: entrada pelo usuario
+    printf("---CADASTRO DA CARTA N-02---\n");
+    printf("Estado: ");
+    scanf(" %c", &estado_1);
+    printf("Codigo da Carta: ");
+    scanf("%s", &cod_1);
+    printf("Nome da Cidade: ", &cidade_1);
+    scanf("%s", &cidade_1);
+    printf("População: ");
+    scanf("%lu", &populacao_1);
+    printf("Área km²: ");
+    scanf("%f", &area_1);
+    printf("PIB: ");
+    scanf("%f", &pib_1);
+    printf("Número de Pontos Turísticos: ");
+    scanf("%i", &nPontosTuris_1);
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+     //calcula os atributos desidade populacional e PIB per Capita da carta 2
+    densidadePopulacional_1 = populacao_1 / area_1;
+    pibPerCapita_1 =  pib_1 / populacao_1;
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    printf("\n");
+    // Exibicao dos dados de cada carta numero 1, densidade populacional e pib per capita
+    printf("Carta 1:\n");
+    printf("Densidade Populacional: %0.2f hab/km²\n", densidadePopulacional_0);
+    printf("PIB per Capita: %0.2f reais\n", pibPerCapita_0);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    printf("\n");
+    // Exibicao dos dados de cada carta numero 2, densidade populacional e pib per capita
+    printf("Carta 2:\n");
+    printf("Densidade Populacional: %0.2f hab/km²\n", densidadePopulacional_1);
+    printf("PIB per Capita: %0.2f reais\n", pibPerCapita_1);
 
+    // Comparação de Cartas com base em um dos atributos
+    printf("\nComparação de cartas (Atributo: População):\n");
+    printf("Carta 1 - %s: %lu\n", cidade_0, populacao_0);
+    printf("Carta 2 - %s: %lu\n", cidade_1, populacao_1);
+
+    //Exibi resultado
+    if (populacao_0 > populacao_1) {
+        printf("Resultado: Carta 1 (%s) VENCEU.\n", cidade_0);
+    } else {
+        printf("Resultado: Carta 2 (%s) VENCEU.\n", cidade_1);
+    }
     return 0;
 }
